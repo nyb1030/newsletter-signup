@@ -56,10 +56,11 @@ run().catch(e => res.sendFile(__dirname + "/failure.html"));
 });
 
 app.post("/failure", function(req, res){
+  console.log(res);
   res.redirect("/");
 })
 
-app.listen(port, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("server running");
 })
 
